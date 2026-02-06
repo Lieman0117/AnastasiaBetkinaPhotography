@@ -682,23 +682,24 @@
 
 /* Keyframes - Must be outside media queries */
 @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(~"calc(-280/16rem * 6)"); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-280px * 6)); }
 }
 
-
 @keyframes scroll-tablet {
-    to { transform: translateX(~"calc(-320/16rem * 6)"); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 6)); }
 }
 
 @keyframes scroll-desktop {
-    to { transform: translateX(~"calc(-380/16rem * 6)"); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-380px * 6)); }
 }
 
 @keyframes scroll-large {
-    to { transform: translateX(~"calc(-400/16rem * 6)"); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-400px * 6)); }
 }
-
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
@@ -724,8 +725,9 @@
         .cs-gallery {
             display: flex;
             gap: 0;
-            animation: scroll 20s linear infinite;
+            animation: scroll 30s linear infinite;
             will-change: transform;
+            width: fit-content;
 
             &:hover {
                 animation-play-state: paused;
@@ -734,8 +736,8 @@
 
         .cs-picture {
             flex-shrink: 0;
-            width: (280/16rem);
-            height: (380/16rem);
+            width: 280px;
+            height: 380px;
             display: block;
             position: relative;
             overflow: hidden;
@@ -761,12 +763,12 @@
         padding: (80/16rem) 0;
 
         .cs-gallery {
-            animation: scroll-tablet 20s linear infinite;
+            animation: scroll-tablet 30s linear infinite;
         }
 
         .cs-picture {
-            width: (320/16rem);
-            height: (420/16rem);
+            width: 320px;
+            height: 420px;
         }
     }
 }
@@ -777,12 +779,12 @@
         padding: (100/16rem) 0;
 
         .cs-gallery {
-            animation: scroll-desktop 20s linear infinite;
+            animation: scroll-desktop 30s linear infinite;
         }
 
         .cs-picture {
-            width: (380/16rem);
-            height: (480/16rem);
+            width: 380px;
+            height: 480px;
         }
     }
 }
@@ -791,12 +793,12 @@
 @media only screen and (min-width: 90rem) {
     #gallery-carousel-1920 {
         .cs-gallery {
-            animation: scroll-large 20s linear infinite;
+            animation: scroll-large 30s linear infinite;
         }
 
         .cs-picture {
-            width: (400/16rem);
-            height: (500/16rem);
+            width: 400px;
+            height: 500px;
         }
     }
 }
