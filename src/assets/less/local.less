@@ -419,7 +419,7 @@
         padding: 0;
         background-color: #FFFFFF;
         position: relative;
-        
+
         .cs-container {
             width: 100%;
             max-width: 100%;
@@ -432,11 +432,25 @@
 
         .cs-picture {
             width: 100%;
-            height: auto;
-            min-height: (500/16rem);
+            height: 100vw; /* square-ish crop on mobile so image isn't too short */
+            max-height: (600/16rem);
+            min-height: (420/16rem);
             display: block;
             position: relative;
             overflow: hidden;
+
+            /* dark overlay so text is always readable */
+            &:after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.55) 0%,
+                    rgba(0, 0, 0, 0.2) 100%
+                );
+                z-index: 1;
+            }
 
             img {
                 width: 100%;
@@ -451,16 +465,17 @@
         .cs-content {
             position: absolute;
             top: 50%;
-            left: (40/16rem);
+            left: (24/16rem);
+            right: (24/16rem); /* constrain so text doesn't overflow */
             transform: translateY(-50%);
             z-index: 10;
-            max-width: (450/16rem);
+            max-width: (340/16rem);
         }
 
         .cs-title {
-            font-size: clamp(1.75rem, 5vw, 3rem);
+            font-size: clamp(1.375rem, 7vw, 1.875rem); /* smaller, controlled size */
             font-weight: 400;
-            line-height: 1.1em;
+            line-height: 1.15em;
             text-align: left;
             margin: 0;
             color: #ffffff;
@@ -475,11 +490,22 @@
 @media only screen and (min-width: 48rem) {
     #hero-banner-1440 {
         .cs-picture {
+            height: auto;
             min-height: (600/16rem);
+            max-height: none;
+
+            &:after {
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.5) 0%,
+                    rgba(0, 0, 0, 0.15) 100%
+                );
+            }
         }
 
         .cs-content {
             left: (80/16rem);
+            right: auto;
             max-width: (550/16rem);
         }
 
@@ -537,7 +563,6 @@
         }
     }
 }
-
 /*-- -------------------------- -->
 <---       About/Hello          -->
 <--- -------------------------- -*/

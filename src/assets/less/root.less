@@ -1034,14 +1034,15 @@
     #footer-1920 {
         background-color: #f0ebe5;
         padding: (80/16rem) (20/16rem) (40/16rem);
-        
+
         .cs-container {
             width: 100%;
             max-width: (1280/16rem);
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: (60/16rem);
+            align-items: center;
+            gap: (48/16rem);
             padding-bottom: (60/16rem);
             border-bottom: 1px solid rgba(61, 57, 53, 0.2);
         }
@@ -1051,19 +1052,12 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            width: 100%;
         }
 
-        .cs-menu {
-            order: 2;
-        }
-
-        .cs-center {
-            order: 1;
-        }
-
-        .cs-cta {
-            order: 3;
-        }
+        .cs-menu { order: 2; }
+        .cs-center { order: 1; }
+        .cs-cta { order: 3; }
 
         .cs-header {
             font-size: (11/16rem);
@@ -1097,7 +1091,8 @@
 
         .cs-logo {
             text-decoration: none;
-            display: block;
+            display: flex;
+            justify-content: center;
             margin-bottom: (20/16rem);
 
             img {
@@ -1110,19 +1105,24 @@
         .cs-locations {
             display: flex;
             align-items: center;
-            gap: 0;
-            flex-wrap: wrap;
             justify-content: center;
+            gap: 0;
         }
 
         .cs-location {
-            font-size: (14/16rem);
+            font-size: (13/16rem);
             color: #6b6560;
             white-space: nowrap;
-            width: (120/16rem);
+            width: (100/16rem);
             text-align: center;
-            position: relative;
+        }
 
+        .cs-divider {
+            display: block;
+            width: 1px;
+            height: (14/16rem);
+            background-color: rgba(61, 57, 53, 0.35);
+            flex-shrink: 0;
         }
 
         .cs-button {
@@ -1148,6 +1148,7 @@
             display: flex;
             gap: (14/16rem);
             align-items: center;
+            justify-content: center;
         }
 
         .cs-social-link {
@@ -1169,7 +1170,6 @@
         }
 
         .cs-copyright {
-            background-color: transparent;
             padding: (28/16rem) (20/16rem) 0;
             text-align: center;
         }
@@ -1191,12 +1191,13 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
-            gap: (60/16rem);
+            gap: (40/16rem);
             padding-bottom: (60/16rem);
         }
 
         .cs-column {
             flex: 1;
+            width: auto;
         }
 
         .cs-menu {
@@ -1226,11 +1227,16 @@
         }
 
         .cs-location {
-            width: (140/16rem);
+            font-size: (13/16rem);
+            width: (110/16rem);
+        }
 
-            &:not(:last-child)::after {
-                height: (22/16rem);
-            }
+        .cs-divider {
+            height: (16/16rem);
+        }
+
+        .cs-social {
+            justify-content: flex-end;
         }
 
         .cs-copyright {
@@ -1251,7 +1257,7 @@
 
         .cs-logo {
             margin-bottom: (28/16rem);
-            
+
             img {
                 height: (90/16rem);
             }
@@ -1262,12 +1268,12 @@
         }
 
         .cs-location {
-            font-size: (25/16rem);
-            width: (160/16rem);
+            font-size: (14/16rem);
+            width: (130/16rem);
+        }
 
-            &:not(:last-child)::after {
-                height: (24/16rem);
-            }
+        .cs-divider {
+            height: (18/16rem);
         }
 
         .cs-button {
