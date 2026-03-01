@@ -13,7 +13,7 @@
 @media only screen and (min-width: 0px) {
 	/* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
 	:root {
-		--primary: #ff6a3e;
+		--primary: #1a1a1a;
 		--primaryLight: #ffba43;
 		--secondary: #ffba43;
 		--secondaryLight: #ffba43;
@@ -674,11 +674,12 @@
             transition: color 0.3s;
 
             &.cs-active {
-                color: var(--primary);
+                color: #ffffff;
+				font-weight: bold;
             }
 
             &:hover {
-                color: var(--primary);
+                color: #ffffff;
             }
         }
 
@@ -898,83 +899,130 @@
 }
 
 /*-- -------------------------- -->
-<---            CTA             -->
+<---      Photo Gallery         -->
 <--- -------------------------- -*/
 
+/* Keyframes - Must be outside media queries */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-280px * 6)); }
+}
+
+@keyframes scroll-tablet {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 6)); }
+}
+
+@keyframes scroll-desktop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-380px * 6)); }
+}
+
+@keyframes scroll-large {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-400px * 6)); }
+}
+
 /* Mobile - 360px */
-@media only screen and (min-width: 0px) {
-	#cta-51 {
-		padding: var(--sectionPadding);
-		position: relative;
+@media only screen and (min-width: 0rem) {
+    #gallery-carousel-1920 {
+        padding: (60/16rem) 0;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        
+        .cs-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
 
-		.cs-container {
-			width: 100%;
-			max-width: (1280/16rem);
-			margin: auto;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			/* 48px - 64px */
-			gap: clamp(3rem, 6vw, 4rem);
-		}
+        .cs-gallery-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
 
-		.cs-content {
-			/* set text align to left if content needs to be left aligned */
-			text-align: center;
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			/* centers content horizontally, set to flex-start to left align */
-			align-items: center;
-		}
+        .cs-gallery {
+            display: flex;
+            gap: 0;
+            animation: scroll 30s linear infinite;
+            will-change: transform;
+            width: fit-content;
 
-		.cs-title {
-			color: var(--bodyTextColorWhite);
-		}
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
 
-		.cs-text {
-			margin-bottom: (16/16rem);
-			color: var(--bodyTextColorWhite);
-			opacity: 0.8;
-			&:last-of-type {
-				margin-bottom: (32/16rem);
-			}
-		}
+        .cs-picture {
+            flex-shrink: 0;
+            width: 280px;
+            height: 380px;
+            display: block;
+            position: relative;
+            overflow: hidden;
 
-		.cs-picture {
-			height: 100%;
-			width: 100%;
-			display: block;
-			position: absolute;
-			z-index: -1;
-			top: 0;
-			left: 0;
-			z-index: -1;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.5s;
+            }
 
-			&:before {
-				/* black color overlay */
-				content: "";
-				position: absolute;
-				display: block;
-				height: 100%;
-				width: 100%;
-				background: #000;
-				opacity: 0.8;
-				top: 0;
-				left: 0;
-				z-index: 1;
-			}
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
 
-			img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-			}
-		}
-	}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #gallery-carousel-1920 {
+        padding: (80/16rem) 0;
+
+        .cs-gallery {
+            animation: scroll-tablet 30s linear infinite;
+        }
+
+        .cs-picture {
+            width: 320px;
+            height: 420px;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #gallery-carousel-1920 {
+        padding: (100/16rem) 0;
+
+        .cs-gallery {
+            animation: scroll-desktop 30s linear infinite;
+        }
+
+        .cs-picture {
+            width: 380px;
+            height: 480px;
+        }
+    }
+}
+
+/* Large Desktop - 1440px */
+@media only screen and (min-width: 90rem) {
+    #gallery-carousel-1920 {
+        .cs-gallery {
+            animation: scroll-large 30s linear infinite;
+        }
+
+        .cs-picture {
+            width: 400px;
+            height: 500px;
+        }
+    }
 }
 
 /*-- -------------------------- -->
