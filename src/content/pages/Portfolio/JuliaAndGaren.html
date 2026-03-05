@@ -1,0 +1,88 @@
+---
+title: "Portfolio | Julia & Garen"
+permalink: "/portfolio/JuliaAndGaren/"
+image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Any page-specific tags that belong in the <head>, such as a page-specific stylesheet -->
+        <link rel="stylesheet" href="/assets/css/portfolio.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-48">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Gallery</span>
+            <h2 class="cs-title">Julia & Garren</h2>
+        </div>
+        <div class="cs-image-group">
+            <div class="cs-row cs-row-1">
+                <!-- Row 1-->
+                <picture class="cs-picture cs-picture-1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/1.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/1.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/1.jpg/" alt="new hallway" width="420" height="567">
+                </picture>
+                <picture class="cs-picture cs-picture-2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/2.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/2.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/2.jpg/" alt="new home construction" width="420" height="630">
+                </picture>
+                <picture class="cs-picture cs-picture-3">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/3.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/3.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/3.jpg/" alt="building a new wall" width="420" height="512">
+                </picture>
+                <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+            </div>
+            <!-- Row 2 -->
+            <div class="cs-row cs-row-2">
+                <picture class="cs-picture cs-picture-1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/4.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/4.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/4.jpg/" alt="new kitchen" width="420" height="492">
+                </picture>
+                <picture class="cs-picture cs-picture-2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/5.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/5.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/5.jpg/" alt="apartment addition" width="420" height="517">
+                </picture>
+                <picture class="cs-picture cs-picture-3">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/6.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/6.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/6.jpg/" alt="kew kitchen cabinets" width="420" height="629">
+                </picture>
+                <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+            </div>
+            <!-- Row 3 -->
+            <div class="cs-row cs-row-3">
+                <picture class="cs-picture cs-picture-1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/7.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/7.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/7.jpg/" alt="new black window structure" width="420" height="625">
+                </picture>
+                <picture class="cs-picture cs-picture-2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/8.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/8.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/8.jpg/" alt="kitchen rebovation" width="420" height="452">
+                </picture>
+                <picture class="cs-picture cs-picture-3">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/JuliaAndGarren/9.jpg/">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/JuliaAndGarren/9.jpg/">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/JuliaAndGarren/9.jpg/" alt="bathroom renovation" width="420" height="629">
+                </picture>
+                <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+            </div>
+        </div>
+    </div>
+</section>
+                                
+        {% include 'sections/cta.html' %}
+{% endblock %}
