@@ -600,161 +600,217 @@
 /*-- -------------------------- -->
 <---   Slide-in Navigation Menu -->
 <--- -------------------------- -*/
+
 @media only screen and (min-width: 0px) {
     #cs-navigation {
-        .cs-ul-wrapper {
-            width: 80vw;
-            max-width: (400/16rem);
+        width: 100%;
+        padding: clamp(1rem, 3vw, 1.5rem) clamp(1.25rem, 5vw, 2.5rem);
+        background-color: #FDFAF8;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9000;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            position: relative;
+        }
+
+        .cs-nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Hamburger Toggle */
+        .cs-toggle {
+            width: (40/16rem);
+            height: (40/16rem);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cs-box {
+            width: (24/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: (5/16rem);
+        }
+
+        .cs-line {
+            width: 100%;
+            height: 1px;
+            background-color: #1a1a1a;
+            display: block;
+            transition: transform 0.3s, opacity 0.3s;
+
+            &.cs-line1 { width: 100%; }
+            &.cs-line2 { width: 70%; }
+            &.cs-line3 { width: 100%; }
+        }
+
+        /* Logo */
+        .cs-logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            img {
+                width: auto;
+                height: (28/16rem);
+                display: block;
+            }
+        }
+
+        /* Inquire link */
+        .cs-inquire {
+            font-size: (13/16rem);
+            font-family: 'Sometimes Times TRIAL', serif;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: opacity 0.3s;
+
+            &:hover {
+                opacity: 0.55;
+            }
+        }
+
+        /* Overlay backdrop */
+        .cs-overlay {
+            width: 100%;
             height: 100vh;
-            padding: (80/16rem) (32/16rem) (48/16rem);
-            background-color: #21252e;
-            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.35);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9500;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s, visibility 0.4s;
+
+            &.cs-active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        /* Slide-in panel */
+        .cs-ul-wrapper {
+            width: 75vw;
+            max-width: (360/16rem);
+            height: 100vh;
+            background-color: #FDFAF8;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 10000;
-            overflow-y: auto;
             transform: translateX(-100%);
-            opacity: 0;
-            transition: transform 0.4s ease-in-out, opacity 0.3s;
+            transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+
+            &.cs-active {
+                transform: translateX(0);
+
+                .cs-li {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        /* Inner nav layout */
+        .cs-nav-inner {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: (56/16rem) (40/16rem) (48/16rem);
         }
 
         .cs-ul {
-            width: 100%;
-            height: auto;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: (20/16rem);
+            gap: (4/16rem);
         }
 
         .cs-li {
-            text-align: left;
             list-style: none;
-            width: 100%;
-            margin: 0;
-            padding: 0;
             opacity: 0;
-            transform: translateX(-30px);
-            transition: transform 0.6s, opacity 0.9s;
+            transform: translateX(-20px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
 
-            &:nth-of-type(1) {
-                transition-delay: 0.05s;
-            }
-
-            &:nth-of-type(2) {
-                transition-delay: 0.1s;
-            }
-
-            &:nth-of-type(3) {
-                transition-delay: 0.15s;
-            }
-
-            &:nth-of-type(4) {
-                transition-delay: 0.2s;
-            }
-
-            &:nth-of-type(5) {
-                transition-delay: 0.25s;
-            }
+            &:nth-of-type(1) { transition-delay: 0.08s; }
+            &:nth-of-type(2) { transition-delay: 0.13s; }
+            &:nth-of-type(3) { transition-delay: 0.18s; }
+            &:nth-of-type(4) { transition-delay: 0.23s; }
+            &:nth-of-type(5) { transition-delay: 0.28s; }
         }
 
         .cs-li-link {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            line-height: 1.2em;
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            font-family: 'Sometimes Times TRIAL', serif;
+            font-weight: 400;
+            line-height: 1.3em;
             text-decoration: none;
-            margin: 0;
-            padding: (12/16rem) 0;
-            color: var(--bodyTextColorWhite);
+            color: #1a1a1a;
+            padding: (8/16rem) 0;
             display: block;
             position: relative;
-            transition: color 0.3s;
+            transition: opacity 0.3s;
 
-            &.cs-active {
-                color: #ffffff;
-				font-weight: bold;
+            &::after {
+                content: "";
+                width: 0;
+                height: 1px;
+                background-color: #1a1a1a;
+                position: absolute;
+                bottom: 4px;
+                left: 0;
+                transition: width 0.3s ease;
             }
 
             &:hover {
-                color: #ffffff;
-            }
-        }
+                opacity: 0.55;
 
-        // Dropdown styles
-        .cs-dropdown {
-            width: 100%;
-
-            &.cs-active {
-                .cs-drop-ul {
-                    height: auto;
-                    margin: (8/16rem) 0 0 0;
-                    padding: (12/16rem) 0 (12/16rem) (20/16rem);
-                    opacity: 1;
-                    visibility: visible;
-                }
-
-                .cs-drop-icon {
-                    transform: rotate(180deg);
+                &::after {
+                    width: 100%;
                 }
             }
-        }
 
-        .cs-dropdown-toggle {
-            font-family: inherit;
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            line-height: 1.2em;
-            text-align: left;
-            width: 100%;
-            padding: (12/16rem) 0;
-            color: var(--bodyTextColorWhite);
-            background: none;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: color 0.3s;
-
-            &:hover {
-                color: var(--primary);
+            &.cs-active {
+                opacity: 0.45;
             }
         }
 
-        .cs-drop-icon {
-            width: (16/16rem);
-            height: (16/16rem);
-            transition: transform 0.3s;
-            color: var(--bodyTextColorWhite);
+        /* CTA at bottom of menu */
+        .cs-menu-footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: (24/16rem);
         }
 
-        .cs-drop-ul {
-            width: 100%;
-            height: 0;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: (8/16rem);
-            transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, visibility 0.3s;
-        }
-
-        .cs-drop-li {
-            list-style: none;
-        }
-
-        .cs-drop-link {
-            font-size: clamp(0.875rem, 2vw, 1.25rem);
-            padding: (8/16rem) 0;
-            color: rgba(255, 255, 255, 0.8);
+        .cs-menu-cta {
+            font-size: (13/16rem);
+            font-family: 'Sometimes Times TRIAL', serif;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: opacity 0.3s;
 
             &:hover {
-                color: var(--primary);
+                opacity: 0.55;
             }
         }
     }
@@ -763,25 +819,16 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 768px) {
     #cs-navigation {
-        padding: clamp(1.5rem, 3vw, 1.875rem) clamp(2rem, 2vw, 2.5rem);
-
-        .cs-container {
-            max-width: (1280/16rem);
-            margin: auto;
-        }
-
-        .cs-logo {
-            max-width: (590/16rem);
+        .cs-logo img {
+            height: (44/16rem);
         }
 
         .cs-ul-wrapper {
-            width: 25vw;
-            min-width: (320/16rem);
-            max-width: (450/16rem);
+            max-width: (400/16rem);
         }
 
         .cs-inquire {
-            font-size: (18/16rem);
+            font-size: (15/16rem);
         }
     }
 }
