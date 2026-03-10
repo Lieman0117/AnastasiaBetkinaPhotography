@@ -18,96 +18,151 @@ image: "OPTIONAL - If an image path is specified here, it will be used for that 
 
 <section id="pricing-1318">
     <div class="cs-container">
-        <div class="cs-content">
-            <h2 class="cs-title">Wedding Photography</h2>
-            <p class="cs-text">
-                Full day wedding photography coverage with beautifully edited images, online galleries, and personalized service for couples across Virginia, Maryland, and DC.
-            </p>
-        </div>
-        <div class="cs-right">
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <span class="cs-package">Intimate Celebration</span>
-                    <span class="cs-price">$2,500</span>
-                    <ul class="cs-ul">
-                        <li class="cs-li">1 Photographer</li>
-                        <li class="cs-li">6 Hours</li>
-                    </ul>
-                </li>
-                <li class="cs-item">
-                    <span class="cs-package">Classic Coverage</span>
-                    <span class="cs-price">$3,800</span>
-                    <ul class="cs-ul">
-                        <li class="cs-li">2 Photographer</li>
-                        <li class="cs-li">8 Hours</li>
-                        <li class="cs-li">Engagement Session</li>
-                    </ul>
-                </li>
-                <li class="cs-item">
-                    <span class="cs-package">Complete Story</span>
-                    <span class="cs-price">$4,700</span>
-                    <ul class="cs-ul">
-                        <li class="cs-li">2 Photographer</li>
-                        <li class="cs-li">10 Hours</li>
-                        <li class="cs-li">Engagement Session</li>
-                    </ul>
-                </li>
-            </ul>
-            <p class="cs-inclusions">
-                Every collection includes a sneak peek within one week, your full gallery in 6–8 weeks, and 60–80 beautifully edited images per hour of coverage. You'll also receive a pre-wedding planning call, personalized questionnaires, and a private online gallery for easy sharing and downloading.
-            </p>
-        </div>
-    </div>
-</section>
 
-<!-- ============================================ -->
-<!--                  Pricing                     -->
-<!-- ============================================ -->
+        <!-- Tab Nav -->
+        <nav class="cs-nav">
+            <button class="cs-nav-btn active" data-tab="wedding">Wedding</button>
+            <button class="cs-nav-btn" data-tab="elopement">Elopement</button>
+            <button class="cs-nav-btn" data-tab="engagement">Engagement &amp; Couples</button>
+            <button class="cs-nav-btn" data-tab="lifestyle">Lifestyle</button>
+        </nav>
 
-<section id="pricing-13181">
-    <div class="cs-container">
-        <div class="cs-right">
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <span class="cs-package">Elopement</span>
-                    <span class="cs-price">$1,500</span>
-                    <ul class="cs-ul">
-                        <li class="cs-li">3 Hours</li>
-                        <li class="cs-li">Perfect for small ceremonies and adventure elopements</li>
-                    </ul>
-                </li>
-                <li class="cs-item">
-                    <span class="cs-package">Engagement & Couples</span>
-                    <span class="cs-price">$550
-                        <span class="cs-duration">/Hour</span>
-                    </span>
-                    <ul class="cs-ul">
-                        <li class="cs-li">Capturing genuine connection and chemistry</li>
-                        <li class="cs-li">Timeless images that tell your love story</li>
-                    </ul>
-                </li>
-                <li class="cs-item">
-                    <span class="cs-package">Lifestyle Sessions</span>
-                    <span class="cs-price">$400 
-                        <span class="cs-duration">/Hour</span>
-                    </span>
-                    <ul class="cs-ul">
-                        <li class="cs-li">Great for families, maternity, or personal branding</li>
-                        <li class="cs-li">Captures personality and genuine emotion</li>
-                        <li class="cs-li">Engagement Session</li>
-                    </ul>
-                </li>
-            </ul>
+        <!-- WEDDING -->
+        <div class="cs-panel active" data-panel="wedding">
+            <div class="cs-panel-inner">
+                <div class="cs-panel-left">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/Image1.jpg' | resize({ width: 600, height: 750 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/Image1.jpg' | resize({ width: 600, height: 750 }) | jpeg %}" alt="Wedding Photography" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="cs-panel-right">
+                    <h2 class="cs-title">Wedding Photography</h2>
+                    <div class="cs-packages">
+                        <div class="cs-package-item">
+                            <h3 class="cs-package-name">Intimate Celebration</h3>
+                            <ul class="cs-ul">
+                                <li class="cs-li">1 Photographer</li>
+                                <li class="cs-li">6 Hours</li>
+                            </ul>
+                            <span class="cs-price">$2,500</span>
+                        </div>
+                        <div class="cs-package-item">
+                            <h3 class="cs-package-name">Classic Coverage</h3>
+                            <ul class="cs-ul">
+                                <li class="cs-li">2 Photographers</li>
+                                <li class="cs-li">8 Hours</li>
+                                <li class="cs-li">Engagement Session</li>
+                            </ul>
+                            <span class="cs-price">$3,800</span>
+                        </div>
+                        <div class="cs-package-item">
+                            <h3 class="cs-package-name">Complete Story</h3>
+                            <ul class="cs-ul">
+                                <li class="cs-li">2 Photographers</li>
+                                <li class="cs-li">10 Hours</li>
+                                <li class="cs-li">Engagement Session</li>
+                            </ul>
+                            <span class="cs-price">$4,700</span>
+                        </div>
+                    </div>
+                    <p class="cs-inclusions">Every collection includes a sneak peek within one week, your full gallery in 6–8 weeks, and 60–80 beautifully edited images per hour of coverage. You'll also receive a pre-wedding planning call, personalized questionnaires, and a private online gallery for easy sharing and downloading.</p>
+                </div>
+            </div>
         </div>
-        <div class="cs-content">
-            <br>
-            <h2 class="cs-title">Other Photography Services</h2>
-            <p class="cs-text">
-                Timeless photography for every milestone, from intimate elopements to engagement sessions and lifestyle portraits across Virginia, Maryland, and DC.
-            </p>
+
+        <!-- ELOPEMENT -->
+        <div class="cs-panel" data-panel="elopement">
+            <div class="cs-panel-inner">
+                <div class="cs-panel-left">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/Image2.jpg' | resize({ width: 600, height: 750 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/Image2.jpg' | resize({ width: 600, height: 750 }) | jpeg %}" alt="Elopement Photography" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="cs-panel-right">
+                    <h2 class="cs-title">Elopement Photography</h2>
+                    <div class="cs-packages">
+                        <div class="cs-package-item">
+                            <h3 class="cs-package-name">Elopement Session</h3>
+                            <ul class="cs-ul">
+                                <li class="cs-li">3 Hours</li>
+                                <li class="cs-li">Perfect for small ceremonies</li>
+                                <li class="cs-li">Adventure elopements</li>
+                            </ul>
+                            <span class="cs-price">$1,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
+        <!-- ENGAGEMENT -->
+        <div class="cs-panel" data-panel="engagement">
+            <div class="cs-panel-inner">
+                <div class="cs-panel-left">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/Image3.jpg' | resize({ width: 600, height: 750 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/Image3.jpg' | resize({ width: 600, height: 750 }) | jpeg %}" alt="Engagement Photography" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="cs-panel-right">
+                    <h2 class="cs-title">Engagement &amp; Couples</h2>
+                    <div class="cs-packages">
+                        <div class="cs-package-item">
+                            <h3 class="cs-package-name">Engagement &amp; Couples</h3>
+                            <ul class="cs-ul">
+                                <li class="cs-li">Genuine connection and chemistry</li>
+                                <li class="cs-li">Timeless images that tell your love story</li>
+                            </ul>
+                            <span class="cs-price">$550 <span class="cs-duration">/ hour</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIFESTYLE -->
+        <div class="cs-panel" data-panel="lifestyle">
+            <div class="cs-panel-inner">
+                <div class="cs-panel-left">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/Image4.jpg' | resize({ width: 600, height: 750 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/Image4.jpg' | resize({ width: 600, height: 750 }) | jpeg %}" alt="Lifestyle Photography" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="cs-panel-right">
+                    <h2 class="cs-title">Lifestyle Sessions</h2>
+                    <div class="cs-packages">
+                        <div class="cs-package-item">
+                            <h3 class="cs-package-name">Lifestyle Sessions</h3>
+                            <ul class="cs-ul">
+                                <li class="cs-li">Families, maternity, or personal branding</li>
+                                <li class="cs-li">Captures personality and genuine emotion</li>
+                            </ul>
+                            <span class="cs-price">$400 <span class="cs-duration">/ hour</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        const btns = document.querySelectorAll('#pricing-1318 .cs-nav-btn');
+        const panels = document.querySelectorAll('#pricing-1318 .cs-panel');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                btns.forEach(b => b.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelector(`#pricing-1318 [data-panel="${tab}"]`).classList.add('active');
+            });
+        });
+    </script>
 </section>
               
 
