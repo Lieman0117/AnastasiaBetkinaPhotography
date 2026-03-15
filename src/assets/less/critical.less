@@ -13,29 +13,35 @@
 @media only screen and (min-width: 0rem) {
   #hero-229 {
     width: 100%;
-    min-height: calc(100vh - 90px);
+    min-height: unset;
     padding-top: 90px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
-    background-color: #F0EEE9;
+    background-color: #ffffff;
 
     .hero-wrapper {
       width: 100%;
       max-width: (1280/16rem);
       margin: 0 auto;
       display: flex;
-      flex-direction: column; /* stack carousels vertically on mobile */
+      flex-direction: column;
       padding: 0;
-      gap: (12/16rem);
+      gap: (6/16rem);
+    }
+
+    /* Hide middle and right carousels on mobile */
+    .hero-carousel:nth-child(2),
+    .hero-carousel:nth-child(3) {
+      display: none;
     }
 
     .hero-carousel {
       position: relative;
       flex: 1;
       width: 100%;
-      height: (456/16rem); /* ~85% of 536 */
+      height: (456/16rem);
       overflow: hidden;
     }
 
@@ -68,15 +74,21 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 768px) {
   #hero-229 {
-    min-height: calc(100vh - 120px);
+    min-height: unset;
     padding-top: (120/16rem);
 
     .hero-wrapper {
-      flex-direction: row; /* all three side by side from tablet up */
+      flex-direction: row;
+    }
+
+    /* Restore all carousels */
+    .hero-carousel:nth-child(2),
+    .hero-carousel:nth-child(3) {
+      display: block;
     }
 
     .hero-carousel {
-      height: (753/16rem); /* ~85% of 886 */
+      height: (753/16rem);
     }
   }
 }
@@ -84,11 +96,11 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 1024px) {
   #hero-229 {
-    min-height: calc(100vh - 140px);
-    padding-top: (140/16rem);
+    min-height: unset;
+    padding-top: (80/16rem);
 
     .hero-carousel {
-      height: (578/16rem); /* ~85% of 680 */
+      height: (578/16rem);
     }
   }
 }
@@ -101,7 +113,7 @@
   #intro-section {
     width: 100%;
     padding: (60/16rem) (16/16rem);
-    background-color: #FFFFFF;
+    background-color: #f6f3ee;
     position: relative;
 
     .cs-container {
@@ -130,7 +142,7 @@
       line-height: 1.2em;
       margin: 0;
       color: var(--headerColor);
-      font-family: 'Sometimes Times TRIAL', serif;
+      font-family: 'Canela', serif;
     }
 
     .cs-text {
@@ -154,19 +166,21 @@
     }
 
     .cs-location-name {
-      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-      font-weight: 600;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 400;
       font-family: 'Inter', Arial, sans-serif;
-      line-height: 1.2em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.4em;
       margin: 0;
-      color: var(--headerColor);
+      color: rgba(0, 0, 0, 0.5);
     }
 
     .cs-divider {
       width: 100%;
       max-width: (60/16rem);
       height: 1px;
-      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.15);
       display: block;
     }
   }
@@ -192,7 +206,7 @@
       width: 1px;
       height: (50/16rem);
       max-width: none;
-      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.15);
       display: block;
     }
   }
