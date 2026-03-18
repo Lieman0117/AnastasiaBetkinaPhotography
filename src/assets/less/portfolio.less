@@ -1,5 +1,5 @@
 /*-- -------------------------- -->
-<---          Services          -->
+<---          Gallery           -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
@@ -7,30 +7,25 @@
     #gallery-2250 {
         padding: var(--sectionPadding);
         background-color: #FDFAF8;
-        /* clips the svg wave from overflowing */
         overflow: hidden;
         position: relative;
         z-index: 1;
 
         .cs-container {
             width: 100%;
-            /* changes to 1840px at tablet */
             max-width: (704/16rem);
             margin: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* 48px - 64px */
             gap: clamp(3rem, 6vw, 4rem);
         }
 
         .cs-content {
-            /* set text align to left if content needs to be left aligned */
             text-align: center;
             width: 100%;
             display: flex;
             flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
             align-items: center;
         }
 
@@ -40,13 +35,11 @@
 
         .cs-card-group {
             width: 100%;
-            /* changes to 100% at tablet */
             max-width: (500/16rem);
             margin: 0;
             padding: 0;
             display: grid;
             grid-template-columns: repeat(12, 1fr);
-            /* 16px - 20px */
             gap: clamp(1rem, 1.5vw, 1.25rem);
         }
 
@@ -56,38 +49,13 @@
             width: 100%;
             height: (280/16rem);
             margin: 0;
-            /* prevents padding and border from affecting height and width */
             box-sizing: border-box;
             padding: 0;
-            /* clips the image corners */
             overflow: hidden;
             grid-column: span 12;
             grid-row: span 1;
             gap: (8/16rem);
             position: relative;
-
-            &:hover,
-            &:focus-within {
-                .cs-h3 {
-                    transform: translateY(0);
-                }
-
-                .cs-fake-link {
-                    height: auto;
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                .cs-background {
-                    &:before {
-                        height: 180%;
-                    }
-                    img {
-                        opacity: .5;
-                        transform: scale(1.1);
-                    }
-                }
-            }
         }
 
         .cs-link {
@@ -111,17 +79,16 @@
         }
 
         .cs-header {
-            /* 16px - 20px */
             font-size: clamp(1rem, 2vw, 1.25rem);
             font-weight: 700;
             line-height: 1.2em;
             text-align: inherit;
             margin: 0;
-            color: var(--primary);
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
         }
 
         .cs-h3 {
-            /* 20px - 25px */
             font-size: clamp(1.25rem, 2vw, 2.4375rem);
             font-weight: 700;
             line-height: 1.2em;
@@ -130,20 +97,20 @@
             width: 100%;
             margin: 0;
             padding-right: (60/16rem);
-            color: var(--bodyTextColor);
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: space-between;
             position: relative;
         }
 
         .cs-icon {
-            /* 40px - 64px */
             width: clamp(2.5rem, 4vw, 4rem);
             height: auto;
             display: block;
             position: absolute;
-            bottom: (0/16rem);
-            right: (0/16rem);
+            bottom: 0;
+            right: 0;
             transition: transform 0.3s;
         }
 
@@ -158,15 +125,26 @@
             left: 0;
             z-index: -1;
 
+            /* gradient scrim so white text is always readable */
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+                z-index: 1;
+            }
 
             img {
                 width: 100%;
                 height: 100%;
-                /* Makes img tag act as a background image */
                 object-fit: cover;
                 position: absolute;
                 z-index: -1;
-                transition: transform 0.6s, opacity .3s;
+                opacity: 1;
+                transition: transform 0.6s;
             }
         }
     }
@@ -181,58 +159,35 @@
 
         .cs-card-group {
             max-width: 100%;
-            /* 60px - 100px, same amount as the top value to offset it */
             margin-bottom: clamp(3.75rem, 6vw, 6.25rem);
             grid-template-rows: 1fr;
         }
 
         .cs-item {
-            /* 280px - 440px */
             min-height: clamp(17.5rem, 35vw, 27.5rem);
             grid-column: span 4;
 
             &.cs-shift {
                 position: relative;
-                /* 60px - 100px */
                 top: clamp(3.75rem, 6vw, 6.25rem);
             }
-        }
-    }
-}
 
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #gallery-2250 {
-        .cs-item {
+            /* Subtle scale on hover still works, no dimming */
             &:hover,
             &:focus-within {
-                .cs-wrapper {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                .cs-background {
-                    &:before {
-                        height: 180%;
-                    }
-                    img {
-                        opacity: .5;
-                        transform: scale(1.1);
-                    }
+                .cs-background img {
+                    transform: scale(1.05);
                 }
             }
         }
+
+        /* Text always visible — no opacity:0 or transform hiding */
         .cs-wrapper {
-            opacity: 0;
-            transform: translateY(5rem);
-            transition: transform .3s, opacity .3s;
+            opacity: 1;
+            transform: none;
         }
     }
 }
-                                
-
-
-
 /*-- -------------------------- -->
 <---          Gallery           -->
 <--- -------------------------- -*/

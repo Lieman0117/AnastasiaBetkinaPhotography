@@ -11,32 +11,6 @@ permalink: "/contact/"
 {% endblock %}
 
 {% block body %}
-
-    <!-- ============================================ -->
-<!--                    Hero                      -->
-<!-- ============================================ -->
-
-<section id="hero-2470">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Get in Touch</span>
-            <h2 class="cs-title">
-                Let's Tell Your Story
-            </h2>
-            <br>
-            <span class="cs-subtitle">Send me your details and I’ll get back to you within 24–48 hours</span>
-        </div>
-        <div class="cs-slideshow">
-            <picture data-slide="1" class="cs-background cs-active">
-                <source media="(max-width: 600px)" srcset="/assets/images/contactH.jpg">
-                <source media="(min-width: 601px)" srcset="/assets/images/contactH.jpg">
-                <img decoding="async" src="/assets/images/contactH.jpg" alt="consultation" width="960" height="979" aria-hidden="true">
-            </picture>
-        </div>
-    </div>
-</section>
-                    
-
 <!-- ============================================ -->
 <!--                   Contact                    -->
 <!-- ============================================ -->
@@ -67,15 +41,29 @@ permalink: "/contact/"
                 </label>
                 <label class="cs-label">
                     Email
-                    <input class="cs-input" required type="text" id="email-587-984" name="email" placeholder="Email">
+                    <input class="cs-input" required type="email" id="email-587-984" name="email" placeholder="Email">
+                </label>
+                <label class="cs-label">
+                    Type of Event
+                    <select class="cs-input cs-select" required id="event-type-587-984" name="event-type">
+                        <option value="" disabled selected>Select event type</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="elopement">Elopement</option>
+                        <option value="engagement">Engagement & Couples</option>
+                        <option value="lifestyle">Lifestyle</option>
+                    </select>
                 </label>
                 <label class="cs-label">
                     Event Date
-                    <input class="cs-input" required type="date" id="Date-587-984" name="event-date" placeholder="Select Date">
+                    <input class="cs-input" required type="date" id="Date-587-984" name="event-date">
                 </label>
                 <label class="cs-label">
                     Venue
-                    <input class="cs-input" required type="text" id="Venue-587-984" name="Venue" placeholder="Venue">
+                    <input class="cs-input" required type="text" id="Venue-587-984" name="Venue" placeholder="Venue name">
+                </label>
+                <label class="cs-label">
+                    Event Location
+                    <input class="cs-input" required type="text" id="location-587-984" name="event-location" placeholder="City, State">
                 </label>
                 <label class="cs-label cs-message">
                     Message
