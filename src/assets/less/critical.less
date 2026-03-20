@@ -31,7 +31,7 @@
       gap: (6/16rem);
     }
 
-    /* Hide middle and right carousels on mobile */
+    /* Hide middle and right carousels on mobile — only show one */
     .hero-carousel:nth-child(2),
     .hero-carousel:nth-child(3) {
       display: none;
@@ -81,7 +81,7 @@
       flex-direction: row;
     }
 
-    /* Restore all carousels */
+    /* Restore all 3 carousels */
     .hero-carousel:nth-child(2),
     .hero-carousel:nth-child(3) {
       display: block;
@@ -99,8 +99,19 @@
     min-height: unset;
     padding-top: (80/16rem);
 
+    .hero-wrapper {
+      align-items: flex-start;
+      padding-bottom: (60/16rem);
+    }
+
     .hero-carousel {
       height: (578/16rem);
+    }
+
+    /* Push left and right down, keeping middle at the top */
+    .hero-carousel:nth-child(1),
+    .hero-carousel:nth-child(3) {
+      margin-top: (60/16rem);
     }
   }
 }
