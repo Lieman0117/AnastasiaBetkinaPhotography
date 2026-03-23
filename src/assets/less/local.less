@@ -419,7 +419,7 @@
 
         /* Middle image sits higher */
         .cs-item:nth-child(3) .cs-picture {
-            margin-bottom: (100/16rem);
+            margin-bottom: (130/16rem);
         }
 
         .cs-picture {
@@ -515,15 +515,14 @@
         }
 
         .cs-title {
-            font-size: clamp(1.375rem, 7vw, 1.875rem); /* smaller, controlled size */
-            font-weight: 400;
+            font-size: clamp(2rem, 7vw, 2rem); /* smaller, controlled size */
+            font-weight: 300;
             line-height: 1.15em;
             text-align: left;
             margin: 0;
             color: #ffffff;
-            text-transform: uppercase;
             letter-spacing: 0.02em;
-            font-style: italic;
+            font-family: 'Alex Brush', cursive;
         }
     }
 }
@@ -566,11 +565,11 @@
 
         .cs-content {
             left: (120/16rem);
-            max-width: (600/16rem);
+            max-width: (800/16rem);
         }
 
         .cs-title {
-            font-size: clamp(1rem, 4vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 4rem);
         }
     }
 }
@@ -584,11 +583,11 @@
 
         .cs-content {
             left: (50/16rem);
-            max-width: (650/16rem);
+            max-width: (800/16rem);
         }
 
         .cs-title {
-            font-size: clamp(3rem, 5vw, 4rem);
+            font-size: clamp(4rem, 6vw, 5rem);
         }
     }
 }
@@ -686,10 +685,11 @@
             font-weight: 500;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: rgba(0, 0, 0, 0.55);
+            color: #000;
             background: none;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 2px solid #000;
             padding: (10/16rem) (22/16rem);
+            text-decoration: none;
         }
 
         .cs-picture {
@@ -799,6 +799,8 @@
         .cs-title {
             color: #000000;
             font-family: 'Canela', serif;
+            text-transform: uppercase;
+            font-weight: 400;
         }
 
         .cs-card-group {
