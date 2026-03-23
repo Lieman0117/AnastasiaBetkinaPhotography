@@ -474,14 +474,13 @@
 
         .cs-picture {
             width: 100%;
-            height: 100vw; /* square-ish crop on mobile so image isn't too short */
+            height: 100vw;
             max-height: (600/16rem);
             min-height: (420/16rem);
             display: block;
             position: relative;
             overflow: hidden;
 
-            /* dark overlay so text is always readable */
             &:after {
                 content: "";
                 position: absolute;
@@ -506,23 +505,27 @@
 
         .cs-content {
             position: absolute;
-            top: 50%;
+            top: 60%; /* increased from 50% to push text lower on mobile */
             left: (24/16rem);
-            right: (24/16rem); /* constrain so text doesn't overflow */
+            right: (24/16rem);
             transform: translateY(-50%);
             z-index: 10;
             max-width: (340/16rem);
         }
 
         .cs-title {
-            font-size: clamp(2rem, 7vw, 2rem); /* smaller, controlled size */
+            font-size: clamp(2rem, 7vw, 2rem);
             font-weight: 300;
             line-height: 1.15em;
             text-align: left;
             margin: 0;
             color: #ffffff;
             letter-spacing: 0.02em;
-            font-family: 'Alex Brush', cursive;
+            
+            .cs-cursive {
+                font-family: 'Alex Brush', cursive;
+                font-weight: 300;
+            }
         }
     }
 }
@@ -545,6 +548,7 @@
         }
 
         .cs-content {
+            top: 50%; /* reset back to centered on tablet and up */
             left: (80/16rem);
             right: auto;
             max-width: (550/16rem);
