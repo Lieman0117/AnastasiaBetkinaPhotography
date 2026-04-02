@@ -75,22 +75,55 @@ tags: "sitemap"
 
   </div>
 
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   const carousels = document.querySelectorAll('.hero-carousel');
-  carousels.forEach(carousel => {
-    const slides = carousel.querySelectorAll('.cs-picture');
-    if (!slides || slides.length < 2) return;
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 767px)").matches;
+  }
+
+  if (isMobile()) {
+    const firstCarousel = carousels[0];
+
+    // Get ALL slides from all carousels
+    const allSlides = document.querySelectorAll('#hero-229 .cs-picture');
+
+    // Move ALL slides into first carousel
+    firstCarousel.innerHTML = '';
+    allSlides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === 0) slide.classList.add('active');
+      firstCarousel.appendChild(slide);
+    });
+
+    const slides = firstCarousel.querySelectorAll('.cs-picture');
     let index = 0;
-    slides[index].classList.add('active');
+
     setInterval(() => {
       slides[index].classList.remove('active');
       index = (index + 1) % slides.length;
       slides[index].classList.add('active');
     }, 3500);
-  });
+
+  } else {
+    // Desktop stays EXACTLY the same
+    carousels.forEach(carousel => {
+      const slides = carousel.querySelectorAll('.cs-picture');
+      if (!slides || slides.length < 2) return;
+
+      let index = 0;
+      slides[index].classList.add('active');
+
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, 3500);
+    });
+  }
 });
-  </script>
+</script>
 </section>
 
 <section id="intro-section">
