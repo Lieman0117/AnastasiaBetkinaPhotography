@@ -61,12 +61,32 @@
         pointer-events: auto;
       }
 
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
       }
+    }
+    .cs-pictureB {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: (465/16rem); /* must match the carousel, not grow beyond it */
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .cs-pictureB img {
+      width: 100%;
+      height: (465/16rem);
+      object-fit: cover;
+      object-position: bottom;
+      display: block;
     }
   }
 }
